@@ -1,0 +1,61 @@
+    <button class="accessibility-btn" aria-label="Accessibility Options" tabindex="0" id="accessibility-main-btn">
+      <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" style="display:block;margin:auto;">
+        <circle cx="12" cy="12" r="11" fill="#2563eb" stroke="#fff" stroke-width="2"/>
+        <path d="M12 7a2 2 0 110 4 2 2 0 010-4zm-5 7c0-1.1.9-2 2-2h6a2 2 0 012 2v1a2 2 0 01-2 2h-1v2h-2v-2h-1a2 2 0 01-2-2v-1z" fill="#fff"/>
+      </svg>
+    </button>
+    <div class="accessibility-menu" id="accessibility-menu" style="display:none;">
+      <button class="accessibility-action" title="Increase Text Size" tabindex="0">A+</button>
+      <button class="accessibility-action" title="Decrease Text Size" tabindex="0">A-</button>
+      <button class="accessibility-action" title="High Contrast" tabindex="0">
+        <svg width="20" height="20" viewBox="0 0 20 20"><circle cx="10" cy="10" r="9" fill="#222" stroke="#fff" stroke-width="2"/><path d="M10 2a8 8 0 0 1 0 16V2z" fill="#fff"/></svg>
+      </button>
+      <button class="accessibility-action" title="Grayscale" tabindex="0">
+        <svg width="20" height="20" viewBox="0 0 20 20"><circle cx="10" cy="10" r="9" fill="#bbb" stroke="#fff" stroke-width="2"/></svg>
+      </button>
+      <button class="accessibility-action" title="Reset" tabindex="0">
+        <svg width="20" height="20" viewBox="0 0 20 20"><circle cx="10" cy="10" r="9" fill="#2563eb" stroke="#fff" stroke-width="2"/><path d="M10 5v5l4 2" stroke="#fff" stroke-width="2" fill="none"/></svg>
+      </button>
+    </div>
+</body>
+<script src="script.js"></script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZARA | Sign Up</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="auth-bg">
+    <div class="auth-container">
+        <div class="auth-form signup-form">
+            <h2>Create Account</h2>
+            <form id="signupForm">
+                <div class="input-group">
+                    <label for="signupName">Full Name</label>
+                    <input type="text" id="signupName" name="signupName" placeholder="Your Name" required>
+                </div>
+                <div class="input-group">
+                    <label for="signupEmail">Email</label>
+                    <input type="email" id="signupEmail" name="signupEmail" placeholder="you@email.com" required>
+                </div>
+                <div class="input-group">
+                    <label for="signupPassword">Password</label>
+                    <input type="password" id="signupPassword" name="signupPassword" placeholder="Password" required>
+                </div>
+                <div class="input-group">
+                    <label for="signupConfirmPassword">Confirm Password</label>
+                    <input type="password" id="signupConfirmPassword" name="signupConfirmPassword" placeholder="Confirm Password" required>
+                </div>
+                <button type="submit" class="auth-btn">Sign Up</button>
+            </form>
+            <div class="auth-footer">
+                Already have an account? <a href="login.html">Login</a>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Man - ZARA</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Tailwind CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <!-- Locomotive Scroll CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.css">
+    <!-- Custom SASS/SCSS compiled CSS (override as needed) -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <button class="accessibility-btn" aria-label="Accessibility Options" tabindex="0" id="accessibility-main-btn">
+      <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" style="display:block;margin:auto;">
+        <circle cx="12" cy="12" r="11" fill="#2563eb" stroke="#fff" stroke-width="2"/>
+        <path d="M12 7a2 2 0 110 4 2 2 0 010-4zm-5 7c0-1.1.9-2 2-2h6a2 2 0 012 2v1a2 2 0 01-2 2h-1v2h-2v-2h-1a2 2 0 01-2-2v-1z" fill="#fff"/>
+      </svg>
+    </button>
+    <div class="accessibility-menu" id="accessibility-menu" style="display:none;">
+      <button class="accessibility-action" title="Increase Text Size" tabindex="0">A+</button>
+      <button class="accessibility-action" title="Decrease Text Size" tabindex="0">A-</button>
+      <button class="accessibility-action" title="High Contrast" tabindex="0">
+        <svg width="20" height="20" viewBox="0 0 20 20"><circle cx="10" cy="10" r="9" fill="#222" stroke="#fff" stroke-width="2"/><path d="M10 2a8 8 0 0 1 0 16V2z" fill="#fff"/></svg>
+      </button>
+      <button class="accessibility-action" title="Grayscale" tabindex="0">
+        <svg width="20" height="20" viewBox="0 0 20 20"><circle cx="10" cy="10" r="9" fill="#bbb" stroke="#fff" stroke-width="2"/></svg>
+      </button>
+      <button class="accessibility-action" title="Reset" tabindex="0">
+        <svg width="20" height="20" viewBox="0 0 20 20"><circle cx="10" cy="10" r="9" fill="#2563eb" stroke="#fff" stroke-width="2"/><path d="M10 5v5l4 2" stroke="#fff" stroke-width="2" fill="none"/></svg>
+      </button>
+    </div>
+    <header class="flex items-center justify-between px-8 py-4 bg-white shadow-md sticky top-0 z-20">
+        <a href="index.html" class="text-3xl font-bold tracking-widest text-blue-700">ZARA</a>
+        <button class="back-btn text-gray-600 hover:text-blue-700 font-semibold" onclick="window.history.back()">&larr; Back</button>
+    </header>
+    <!-- Three.js Canvas Background -->
+    <div id="three-bg" class="fixed inset-0 -z-10"></div>
+    <main id="main-scroll" data-scroll-container class="min-h-screen bg-gradient-to-br from-blue-50 via-white to-blue-100 py-8">
+      <div class="flex items-center justify-between px-8 mb-6">
+        <h2 class="text-4xl font-extrabold tracking-tight text-gray-900">Man Collection</h2>
+        <!-- Filter Dropdown -->
+        <div class="relative">
+          <button id="filterBtn" class="px-4 py-2 bg-blue-600 text-white rounded-full shadow hover:bg-blue-700 transition-all flex items-center gap-2">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2a1 1 0 01-.293.707l-6.414 6.414A2 2 0 0013 14.586V19a1 1 0 01-1.447.894l-2-1A1 1 0 019 18v-3.414a2 2 0 00-.586-1.414L2 6.707A1 1 0 012 6V4z"/></svg>
+            Filter
+          </button>
+          <div id="filterDropdown" class="hidden absolute right-0 mt-2 w-48 bg-white border border-gray-200 rounded-lg shadow-lg z-30">
+            <button class="block w-full text-left px-4 py-2 hover:bg-blue-50">Shirts</button>
+            <button class="block w-full text-left px-4 py-2 hover:bg-blue-50">Jackets</button>
+            <button class="block w-full text-left px-4 py-2 hover:bg-blue-50">Pants</button>
+            <button class="block w-full text-left px-4 py-2 hover:bg-blue-50">Suits</button>
+            <button class="block w-full text-left px-4 py-2 hover:bg-blue-50">All</button>
+          </div>
+        </div>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 px-8" id="products-grid">
+            <!-- Standardized Product Cards -->
+            <div class="product-card group relative flex flex-col bg-white rounded-xl shadow-lg overflow-hidden focus-within:ring-2 focus-within:ring-blue-500 transition-all" tabindex="0" data-title="Product 1" data-price="1299" data-img="Images/mens html file img/img1.jpeg">
+                <img src="Images/mens html file img/img1.jpeg" alt="Product 1" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110 group-focus-within:scale-110">
+                <div class="p-4">
+                    <div class="product-title text-lg font-semibold text-gray-900">Product 1</div>
+                    <div class="product-price text-blue-700 font-bold text-xl">₹1,299</div>
+                </div>
+                <div class="absolute inset-0 bg-white bg-opacity-90 flex flex-col justify-center items-center opacity-0 group-hover:opacity-100 group-focus-within:opacity-100 transition-opacity duration-500 p-6" aria-hidden="false">
+                    <p>Details on hover 1</p>
+                    <button class="add-cart-btn px-4 py-2 bg-blue-600 text-white rounded-full shadow hover:bg-blue-700 mb-2 focus:outline-none focus:ring-2 focus:ring-blue-500" data-id="m1">Add to Cart</button>
+                    <button class="buy-btn px-4 py-2 bg-pink-500 text-white rounded-full shadow hover:bg-pink-600 focus:outline-none focus:ring-2 focus:ring-pink-500" data-id="m1">Buy Now</button>
+                </div>
+            </div>
+            <div class="product-card group relative flex flex-col bg-white rounded-xl shadow-lg overflow-hidden focus-within:ring-2 focus-within:ring-blue-500 transition-all" tabindex="0" data-title="Product 2" data-price="3499" data-img="Images/mens html file img/img2.jpeg">
+                <img src="Images/mens html file img/img2.jpeg" alt="Product 2" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110 group-focus-within:scale-110">
+                <div class="p-4">
+                    <div class="product-title text-lg font-semibold text-gray-900">Product 2</div>
+                    <div class="product-price text-blue-700 font-bold text-xl">₹3,499</div>
+                </div>
+                <div class="absolute inset-0 bg-white bg-opacity-90 flex flex-col justify-center items-center opacity-0 group-hover:opacity-100 group-focus-within:opacity-100 transition-opacity duration-500 p-6" aria-hidden="false">
+                    <p>Details on hover 2</p>
+                    <button class="add-cart-btn px-4 py-2 bg-blue-600 text-white rounded-full shadow hover:bg-blue-700 mb-2 focus:outline-none focus:ring-2 focus:ring-blue-500" data-id="m2">Add to Cart</button>
+                    <button class="buy-btn px-4 py-2 bg-pink-500 text-white rounded-full shadow hover:bg-pink-600 focus:outline-none focus:ring-2 focus:ring-pink-500" data-id="m2">Buy Now</button>
+                </div>
+            </div>
+            <div class="product-card group relative flex flex-col bg-white rounded-xl shadow-lg overflow-hidden focus-within:ring-2 focus-within:ring-blue-500 transition-all" tabindex="0" data-title="Product 3" data-price="1999" data-img="Images/mens html file img/img3.jpeg">
+                <img src="Images/mens html file img/img3.jpeg" alt="Product 3" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110 group-focus-within:scale-110">
+                <div class="p-4">
+                    <div class="product-title text-lg font-semibold text-gray-900">Product 3</div>
+                    <div class="product-price text-blue-700 font-bold text-xl">₹1,999</div>
+                </div>
+                <div class="absolute inset-0 bg-white bg-opacity-90 flex flex-col justify-center items-center opacity-0 group-hover:opacity-100 group-focus-within:opacity-100 transition-opacity duration-500 p-6" aria-hidden="false">
+                    <p>Details on hover 3</p>
+                    <button class="add-cart-btn px-4 py-2 bg-blue-600 text-white rounded-full shadow hover:bg-blue-700 mb-2 focus:outline-none focus:ring-2 focus:ring-blue-500" data-id="m3">Add to Cart</button>
+                    <button class="buy-btn px-4 py-2 bg-pink-500 text-white rounded-full shadow hover:bg-pink-600 focus:outline-none focus:ring-2 focus:ring-pink-500" data-id="m3">Buy Now</button>
+                </div>
+            </div>
+            <div class="product-card group relative flex flex-col bg-white rounded-xl shadow-lg overflow-hidden focus-within:ring-2 focus-within:ring-blue-500 transition-all" tabindex="0" data-title="Product 4" data-price="1599" data-img="Images/mens html file img/img4.jpeg">
+                <img src="Images/mens html file img/img4.jpeg" alt="Product 4" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110 group-focus-within:scale-110">
+                <div class="p-4">
+                    <div class="product-title text-lg font-semibold text-gray-900">Product 4</div>
+                    <div class="product-price text-blue-700 font-bold text-xl">₹1,599</div>
+                </div>
+                <div class="absolute inset-0 bg-white bg-opacity-90 flex flex-col justify-center items-center opacity-0 group-hover:opacity-100 group-focus-within:opacity-100 transition-opacity duration-500 p-6" aria-hidden="false">
+                    <p>Details on hover 4</p>
+                    <button class="add-cart-btn px-4 py-2 bg-blue-600 text-white rounded-full shadow hover:bg-blue-700 mb-2 focus:outline-none focus:ring-2 focus:ring-blue-500" data-id="m4">Add to Cart</button>
+                    <button class="buy-btn px-4 py-2 bg-pink-500 text-white rounded-full shadow hover:bg-pink-600 focus:outline-none focus:ring-2 focus:ring-pink-500" data-id="m4">Buy Now</button>
+                </div>
+            </div>
+            <div class="product-card group relative flex flex-col bg-white rounded-xl shadow-lg overflow-hidden focus-within:ring-2 focus-within:ring-blue-500 transition-all" tabindex="0" data-title="Product 5" data-price="1399" data-img="Images/mens html file img/img5.jpeg">
+                <img src="Images/mens html file img/img5.jpeg" alt="Product 5" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110 group-focus-within:scale-110">
+                <div class="p-4">
+                    <div class="product-title text-lg font-semibold text-gray-900">Product 5</div>
+                    <div class="product-price text-blue-700 font-bold text-xl">₹1,399</div>
+                </div>
+                <div class="absolute inset-0 bg-white bg-opacity-90 flex flex-col justify-center items-center opacity-0 group-hover:opacity-100 group-focus-within:opacity-100 transition-opacity duration-500 p-6" aria-hidden="false">
+                    <p>Details on hover 5</p>
+                    <button class="add-cart-btn px-4 py-2 bg-blue-600 text-white rounded-full shadow hover:bg-blue-700 mb-2 focus:outline-none focus:ring-2 focus:ring-blue-500" data-id="m5">Add to Cart</button>
+                    <button class="buy-btn px-4 py-2 bg-pink-500 text-white rounded-full shadow hover:bg-pink-600 focus:outline-none focus:ring-2 focus:ring-pink-500" data-id="m5">Buy Now</button>
+                </div>
+            </div>
+            <div class="product-card group relative flex flex-col bg-white rounded-xl shadow-lg overflow-hidden focus-within:ring-2 focus-within:ring-blue-500 transition-all" tabindex="0" data-title="Product 6" data-price="1799" data-img="Images/mens html file img/img6.jpeg">
+                <img src="Images/mens html file img/img6.jpeg" alt="Product 6" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110 group-focus-within:scale-110">
+                <div class="p-4">
+                    <div class="product-title text-lg font-semibold text-gray-900">Product 6</div>
+                    <div class="product-price text-blue-700 font-bold text-xl">₹1,799</div>
+                </div>
+                <div class="absolute inset-0 bg-white bg-opacity-90 flex flex-col justify-center items-center opacity-0 group-hover:opacity-100 group-focus-within:opacity-100 transition-opacity duration-500 p-6" aria-hidden="false">
+                    <p>Details on hover 6</p>
+                    <button class="add-cart-btn px-4 py-2 bg-blue-600 text-white rounded-full shadow hover:bg-blue-700 mb-2 focus:outline-none focus:ring-2 focus:ring-blue-500" data-id="m6">Add to Cart</button>
+                    <button class="buy-btn px-4 py-2 bg-pink-500 text-white rounded-full shadow hover:bg-pink-600 focus:outline-none focus:ring-2 focus:ring-pink-500" data-id="m6">Buy Now</button>
+                </div>
+            </div>
+            <div class="product-card group relative flex flex-col bg-white rounded-xl shadow-lg overflow-hidden focus-within:ring-2 focus-within:ring-blue-500 transition-all" tabindex="0" data-title="Product 7" data-price="4999" data-img="Images/mens html file img/img7.jpeg">
+                <img src="Images/mens html file img/img7.jpeg" alt="Product 7" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110 group-focus-within:scale-110">
+                <div class="p-4">
+                    <div class="product-title text-lg font-semibold text-gray-900">Product 7</div>
+                    <div class="product-price text-blue-700 font-bold text-xl">₹4,999</div>
+                </div>
+                <div class="absolute inset-0 bg-white bg-opacity-90 flex flex-col justify-center items-center opacity-0 group-hover:opacity-100 group-focus-within:opacity-100 transition-opacity duration-500 p-6" aria-hidden="false">
+                    <p>Details on hover 7</p>
+                    <button class="add-cart-btn px-4 py-2 bg-blue-600 text-white rounded-full shadow hover:bg-blue-700 mb-2 focus:outline-none focus:ring-2 focus:ring-blue-500" data-id="m7">Add to Cart</button>
+                    <button class="buy-btn px-4 py-2 bg-pink-500 text-white rounded-full shadow hover:bg-pink-600 focus:outline-none focus:ring-2 focus:ring-pink-500" data-id="m7">Buy Now</button>
+                </div>
+            </div>
+            <div class="product-card group relative flex flex-col bg-white rounded-xl shadow-lg overflow-hidden focus-within:ring-2 focus-within:ring-blue-500 transition-all" tabindex="0" data-title="Product 8" data-price="2299" data-img="Images/mens html file img/img8.jpeg">
+                <img src="Images/mens html file img/img8.jpeg" alt="Product 8" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110 group-focus-within:scale-110">
+                <div class="p-4">
+                    <div class="product-title text-lg font-semibold text-gray-900">Product 8</div>
+                    <div class="product-price text-blue-700 font-bold text-xl">₹2,299</div>
+                </div>
+                <div class="absolute inset-0 bg-white bg-opacity-90 flex flex-col justify-center items-center opacity-0 group-hover:opacity-100 group-focus-within:opacity-100 transition-opacity duration-500 p-6" aria-hidden="false">
+                    <p>Details on hover 8</p>
+                    <button class="add-cart-btn px-4 py-2 bg-blue-600 text-white rounded-full shadow hover:bg-blue-700 mb-2 focus:outline-none focus:ring-2 focus:ring-blue-500" data-id="m8">Add to Cart</button>
+                    <button class="buy-btn px-4 py-2 bg-pink-500 text-white rounded-full shadow hover:bg-pink-600 focus:outline-none focus:ring-2 focus:ring-pink-500" data-id="m8">Buy Now</button>
+                </div>
+            </div>
+            <div class="product-card group relative flex flex-col bg-white rounded-xl shadow-lg overflow-hidden focus-within:ring-2 focus-within:ring-blue-500 transition-all" tabindex="0" data-title="Product 9" data-price="3799" data-img="Images/mens html file img/img9.jpeg">
+                <img src="Images/mens html file img/img9.jpeg" alt="Product 9" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110 group-focus-within:scale-110">
+                <div class="p-4">
+                    <div class="product-title text-lg font-semibold text-gray-900">Product 9</div>
+                    <div class="product-price text-blue-700 font-bold text-xl">₹3,799</div>
+                </div>
+                <div class="absolute inset-0 bg-white bg-opacity-90 flex flex-col justify-center items-center opacity-0 group-hover:opacity-100 group-focus-within:opacity-100 transition-opacity duration-500 p-6" aria-hidden="false">
+                    <p>Details on hover 9</p>
+                    <button class="add-cart-btn px-4 py-2 bg-blue-600 text-white rounded-full shadow hover:bg-blue-700 mb-2 focus:outline-none focus:ring-2 focus:ring-blue-500" data-id="m9">Add to Cart</button>
+                    <button class="buy-btn px-4 py-2 bg-pink-500 text-white rounded-full shadow hover:bg-pink-600 focus:outline-none focus:ring-2 focus:ring-pink-500" data-id="m9">Buy Now</button>
+                </div>
+            </div>
+            <div class="product-card group relative flex flex-col bg-white rounded-xl shadow-lg overflow-hidden focus-within:ring-2 focus-within:ring-blue-500 transition-all" tabindex="0" data-title="Product 10" data-price="2599" data-img="Images/mens html file img/img10.jpeg">
+                <img src="Images/mens html file img/img10.jpeg" alt="Product 10" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110 group-focus-within:scale-110">
+                <div class="p-4">
+                    <div class="product-title text-lg font-semibold text-gray-900">Product 10</div>
+                    <div class="product-price text-blue-700 font-bold text-xl">₹2,599</div>
+                </div>
+                <div class="absolute inset-0 bg-white bg-opacity-90 flex flex-col justify-center items-center opacity-0 group-hover:opacity-100 group-focus-within:opacity-100 transition-opacity duration-500 p-6" aria-hidden="false">
+                    <p>Details on hover 10</p>
+                    <button class="add-cart-btn px-4 py-2 bg-blue-600 text-white rounded-full shadow hover:bg-blue-700 mb-2 focus:outline-none focus:ring-2 focus:ring-blue-500" data-id="m10">Add to Cart</button>
+                    <button class="buy-btn px-4 py-2 bg-pink-500 text-white rounded-full shadow hover:bg-pink-600 focus:outline-none focus:ring-2 focus:ring-pink-500" data-id="m10">Buy Now</button>
+                </div>
+            </div>
+            <div class="product-card group relative flex flex-col bg-white rounded-xl shadow-lg overflow-hidden focus-within:ring-2 focus-within:ring-blue-500 transition-all" tabindex="0" data-title="Product 11" data-price="799" data-img="Images/mens html file img/img11.jpeg">
+                <img src="Images/mens html file img/img11.jpeg" alt="Product 11" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110 group-focus-within:scale-110">
+                <div class="p-4">
+                    <div class="product-title text-lg font-semibold text-gray-900">Product 11</div>
+                    <div class="product-price text-blue-700 font-bold text-xl">₹799</div>
+                </div>
+                <div class="absolute inset-0 bg-white bg-opacity-90 flex flex-col justify-center items-center opacity-0 group-hover:opacity-100 group-focus-within:opacity-100 transition-opacity duration-500 p-6" aria-hidden="false">
+                    <p>Details on hover 11</p>
+                    <button class="add-cart-btn px-4 py-2 bg-blue-600 text-white rounded-full shadow hover:bg-blue-700 mb-2 focus:outline-none focus:ring-2 focus:ring-blue-500" data-id="m11">Add to Cart</button>
+                    <button class="buy-btn px-4 py-2 bg-pink-500 text-white rounded-full shadow hover:bg-pink-600 focus:outline-none focus:ring-2 focus:ring-pink-500" data-id="m11">Buy Now</button>
+                </div>
+            </div>
+            <div class="product-card group relative flex flex-col bg-white rounded-xl shadow-lg overflow-hidden focus-within:ring-2 focus-within:ring-blue-500 transition-all" tabindex="0" data-title="Product 12" data-price="7999" data-img="Images/mens html file img/img12.jpeg">
+                <img src="Images/mens html file img/img12.jpeg" alt="Product 12" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110 group-focus-within:scale-110">
+                <div class="p-4">
+                    <div class="product-title text-lg font-semibold text-gray-900">Product 12</div>
+                    <div class="product-price text-blue-700 font-bold text-xl">₹7,999</div>
+                </div>
+                <div class="absolute inset-0 bg-white bg-opacity-90 flex flex-col justify-center items-center opacity-0 group-hover:opacity-100 group-focus-within:opacity-100 transition-opacity duration-500 p-6" aria-hidden="false">
+                    <p>Details on hover 12</p>
+                    <button class="add-cart-btn px-4 py-2 bg-blue-600 text-white rounded-full shadow hover:bg-blue-700 mb-2 focus:outline-none focus:ring-2 focus:ring-blue-500" data-id="m12">Add to Cart</button>
+                    <button class="buy-btn px-4 py-2 bg-pink-500 text-white rounded-full shadow hover:bg-pink-600 focus:outline-none focus:ring-2 focus:ring-pink-500" data-id="m12">Buy Now</button>
+                </div>
+            </div>
+        </div>
+        <a href="index.html" class="back-btn block mt-10 mx-auto w-max px-6 py-2 rounded-full bg-gray-200 hover:bg-blue-100 text-gray-700 font-semibold">&larr; Back</a>
+      </div>
+    </main>
+    <!-- GSAP, ScrollTrigger, Locomotive Scroll, Three.js -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.153.0/build/three.min.js"></script>
+    <script>
+      // Locomotive Scroll Init
+      const scroll = new LocomotiveScroll({
+        el: document.querySelector('#main-scroll'),
+        smooth: true
+      });
+      // GSAP Animations
+      gsap.utils.toArray('.product-card').forEach((card, i) => {
+        gsap.from(card, {
+          opacity: 0,
+          y: 60,
+          duration: 1,
+          delay: i * 0.1,
+          scrollTrigger: {
+            trigger: card,
+            start: 'top 90%',
+            toggleActions: 'play none none none',
+            scroller: '#main-scroll'
+          }
+        });
+      });
+      // Filter Dropdown
+      const filterBtn = document.getElementById('filterBtn');
+      const filterDropdown = document.getElementById('filterDropdown');
+      filterBtn.addEventListener('click', () => {
+        filterDropdown.classList.toggle('hidden');
+      });
+      document.addEventListener('click', (e) => {
+        if (!filterBtn.contains(e.target) && !filterDropdown.contains(e.target)) {
+          filterDropdown.classList.add('hidden');
+        }
+      });
+      // Three.js Simple Animated BG
+      const threeBg = document.getElementById('three-bg');
+      const scene = new THREE.Scene();
+      const camera = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHeight, 0.1, 1000);
+      const renderer = new THREE.WebGLRenderer({ alpha: true });
+      renderer.setSize(window.innerWidth, window.innerHeight);
+      threeBg.appendChild(renderer.domElement);
+      // Add animated sphere
+      const geometry = new THREE.SphereGeometry(2, 32, 32);
+      const material = new THREE.MeshStandardMaterial({ color: 0x2563eb, roughness: 0.5, metalness: 0.7 });
+      const sphere = new THREE.Mesh(geometry, material);
+      scene.add(sphere);
+      const light = new THREE.PointLight(0xffffff, 1, 100);
+      light.position.set(10, 10, 10);
+      scene.add(light);
+      camera.position.z = 7;
+      function animate() {
+        requestAnimationFrame(animate);
+        sphere.rotation.y += 0.005;
+        renderer.render(scene, camera);
+      }
+      animate();
+      window.addEventListener('resize', () => {
+        camera.aspect = window.innerWidth / window.innerHeight;
+        camera.updateProjectionMatrix();
+        renderer.setSize(window.innerWidth, window.innerHeight);
+      });
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>

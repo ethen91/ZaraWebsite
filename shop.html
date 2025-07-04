@@ -1,0 +1,549 @@
+<!-- MODERNIZED ZARA SHOP PAGE -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZARA | Shop Now</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-gradient-to-br from-blue-50 via-pink-50 to-yellow-50 min-h-screen font-[Montserrat]">
+    <button class="accessibility-btn" aria-label="Accessibility Options" tabindex="0" id="accessibility-main-btn">
+      <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" style="display:block;margin:auto;">
+        <circle cx="12" cy="12" r="11" fill="#2563eb" stroke="#fff" stroke-width="2"/>
+        <path d="M12 7a2 2 0 110 4 2 2 0 010-4zm-5 7c0-1.1.9-2 2-2h6a2 2 0 012 2v1a2 2 0 01-2 2h-1v2h-2v-2h-1a2 2 0 01-2-2v-1z" fill="#fff"/>
+      </svg>
+    </button>
+    <div class="accessibility-menu" id="accessibility-menu" style="display:none;">
+      <button class="accessibility-action" title="Increase Text Size" tabindex="0">A+</button>
+      <button class="accessibility-action" title="Decrease Text Size" tabindex="0">A-</button>
+      <button class="accessibility-action" title="High Contrast" tabindex="0">
+        <svg width="20" height="20" viewBox="0 0 20 20"><circle cx="10" cy="10" r="9" fill="#222" stroke="#fff" stroke-width="2"/><path d="M10 2a8 8 0 0 1 0 16V2z" fill="#fff"/></svg>
+      </button>
+      <button class="accessibility-action" title="Grayscale" tabindex="0">
+        <svg width="20" height="20" viewBox="0 0 20 20"><circle cx="10" cy="10" r="9" fill="#bbb" stroke="#fff" stroke-width="2"/></svg>
+      </button>
+      <button class="accessibility-action" title="Reset" tabindex="0">
+        <svg width="20" height="20" viewBox="0 0 20 20"><circle cx="10" cy="10" r="9" fill="#2563eb" stroke="#fff" stroke-width="2"/><path d="M10 5v5l4 2" stroke="#fff" stroke-width="2" fill="none"/></svg>
+      </button>
+    </div>
+    <!-- Modern Navbar -->
+    <header class="navbar-fancy">
+      <div class="navbar-container">
+        <a href="index.html" class="navbar-logo">ZARA</a>
+        <nav class="navbar-links" id="navbarLinks">
+          <a href="woman.html">WOMAN</a>
+          <a href="man.html">MAN</a>
+          <a href="kids.html">KIDS</a>
+          <a href="sale.html">SALE</a>
+          <a href="makeup.html">MAKEUP</a>
+          <a href="gallery.html">GALLERY</a>
+        </nav>
+        <div class="navbar-actions">
+          <form class="navbar-search" action="#" onsubmit="return false;">
+            <input type="text" placeholder="Search products..." id="shop-search">
+            <button type="submit" id="shop-search-btn" aria-label="Search"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></button>
+          </form>
+          <a href="login.html" class="icon-link" title="Login"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 4-7 8-7s8 3 8 7"/></svg></a>
+          <a href="help.html" class="icon-link" title="Help"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#f472b6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 1 1 5.82 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12" y2="17"/></svg></a>
+          <a href="bag.html" class="icon-link" id="shop-bag-link" title="Shopping Bag"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fbbf24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2l1.5 2h9L18 2"/><rect x="3" y="6" width="18" height="14" rx="2"/><path d="M16 10a4 4 0 0 1-8 0"/></svg> <span id="shop-bag-count"></span></a>
+          <button class="navbar-toggle" id="navbarToggle" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+        </div>
+      </div>
+    </header>
+    <style>
+    .navbar-fancy {
+      width: 100%;
+      background: linear-gradient(90deg, #f6f7fb 60%, #fbbf24 100%);
+      box-shadow: 0 2px 18px #2563eb11;
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      padding: 0;
+    }
+    .navbar-container {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.7rem 2vw 0.7rem 2vw;
+      position: relative;
+    }
+    .navbar-logo {
+      font-size: 2.1rem;
+      font-weight: 900;
+      letter-spacing: 0.13em;
+      color: #2563eb;
+      background: linear-gradient(90deg, #2563eb 30%, #f472b6 60%, #fbbf24 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      text-fill-color: transparent;
+      text-shadow: 0 2px 18px #2563eb22, 0 1px 0 #fff;
+      text-decoration: none;
+      transition: color 0.18s;
+    }
+    .navbar-links {
+      display: flex;
+      gap: 1.7rem;
+      align-items: center;
+      font-weight: 700;
+      font-size: 1.08rem;
+      letter-spacing: 0.04em;
+    }
+    .navbar-links a {
+      color: #222;
+      text-decoration: none;
+      padding: 0.5rem 1.1rem;
+      border-radius: 1.2rem;
+      transition: background 0.18s, color 0.18s;
+      position: relative;
+    }
+    .navbar-links a:hover, .navbar-links a.active {
+      background: linear-gradient(90deg, #fbbf24 0%, #f472b6 100%);
+      color: #fff;
+      box-shadow: 0 2px 12px #fbbf2433;
+    }
+    .navbar-actions {
+      display: flex;
+      align-items: center;
+      gap: 1.1rem;
+      position: relative;
+    }
+    .navbar-search {
+      display: flex;
+      align-items: center;
+      background: #fff;
+      border-radius: 2rem;
+      box-shadow: 0 2px 8px #2563eb11;
+      padding: 0.2rem 0.7rem 0.2rem 1rem;
+      margin-right: 0.7rem;
+    }
+    .navbar-search input {
+      border: none;
+      outline: none;
+      font-size: 1rem;
+      background: transparent;
+      padding: 0.4rem 0.5rem 0.4rem 0;
+      color: #222;
+      width: 120px;
+      transition: width 0.18s;
+    }
+    .navbar-search input:focus {
+      width: 180px;
+    }
+    .navbar-search button {
+      background: none;
+      border: none;
+      padding: 0 0.2rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+    }
+    .icon-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.45rem;
+      background: #fff;
+      border-radius: 50%;
+      width: 2.3rem;
+      height: 2.3rem;
+      box-shadow: 0 2px 8px #2563eb11;
+      transition: background 0.18s, box-shadow 0.18s;
+      margin-left: 0.1rem;
+    }
+    .icon-link:hover {
+      background: linear-gradient(90deg, #fbbf24 0%, #f472b6 100%);
+      box-shadow: 0 4px 18px #fbbf2433;
+    }
+    .navbar-toggle {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 2.3rem;
+      height: 2.3rem;
+      background: #fff;
+      border: none;
+      border-radius: 50%;
+      box-shadow: 0 2px 8px #2563eb11;
+      cursor: pointer;
+      margin-left: 0.2rem;
+      transition: background 0.18s, box-shadow 0.18s;
+      z-index: 100;
+    }
+    .navbar-toggle span {
+      display: block;
+      width: 1.3rem;
+      height: 3px;
+      background: #2563eb;
+      margin: 2.5px 0;
+      border-radius: 2px;
+      transition: all 0.22s;
+    }
+    @media (max-width: 900px) {
+      .navbar-links {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: #fff;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.2rem;
+        padding: 1.1rem 2vw 1.1rem 2vw;
+        border-radius: 0 0 1.2rem 1.2rem;
+        box-shadow: 0 8px 24px #2563eb11;
+        display: none;
+      }
+      .navbar-links.open {
+        display: flex;
+      }
+      .navbar-toggle {
+        display: flex;
+      }
+      .navbar-search input {
+        width: 80px;
+      }
+      .navbar-search input:focus {
+        width: 120px;
+      }
+    }
+    </style>
+    <script>
+    // Navbar mobile toggle
+    document.addEventListener('DOMContentLoaded', function() {
+      var toggle = document.getElementById('navbarToggle');
+      var links = document.getElementById('navbarLinks');
+      if (toggle && links) {
+        toggle.addEventListener('click', function() {
+          links.classList.toggle('open');
+        });
+      }
+    });
+    </script>
+
+    <!-- Shop Hero Banner -->
+    <section class="shop-hero-section flex flex-col items-center justify-center text-center py-16 md:py-24 bg-gradient-to-br from-blue-100 via-pink-50 to-yellow-100 animate__animated animate__fadeInDown">
+      <h1 class="text-5xl md:text-7xl font-extrabold mb-4 text-blue-700 tracking-tight drop-shadow-lg">Shop Now</h1>
+      <div class="text-xl md:text-2xl font-medium mb-6 text-gray-700">Browse all our latest arrivals and bestsellers</div>
+      <button class="hero-btn px-6 py-2 bg-gradient-to-r from-blue-600 via-pink-500 to-yellow-400 text-white rounded-full shadow-xl hover:from-pink-500 hover:to-blue-600 text-base font-bold transition-all animate__animated animate__pulse animate__infinite" style="font-size:1rem;" onclick="window.location.href='sale.html'">View Sale</button>
+    </section>
+
+
+    <main class="max-w-7xl mx-auto px-4 md:px-8">
+      <!-- Filter and Search Bar with Back Button on Right -->
+      <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mt-8 mb-6 animate__animated animate__fadeInUp">
+        <div class="flex gap-2 items-center w-full md:w-auto">
+          <button id="filter-btn" class="hero-btn px-6 py-2 bg-gradient-to-r from-blue-600 via-pink-500 to-yellow-400 text-white rounded-full shadow hover:from-pink-500 hover:to-blue-600 font-bold transition-all">Filters</button>
+          <div id="filter-panel" class="filter-panel bg-white rounded-2xl shadow-lg p-4 flex flex-col gap-3 absolute z-20 mt-2 right-4 md:right-auto" style="display:none;min-width:220px;">
+            <label class="font-semibold text-blue-700">Category:
+              <select id="filter-category" class="block w-full mt-1 rounded-lg border-gray-300 focus:ring-blue-500 focus:border-blue-500">
+                <option value="all">All</option>
+                <option value="woman">Woman</option>
+                <option value="man">Man</option>
+                <option value="kids">Kids</option>
+                <option value="sale">Sale</option>
+              </select>
+            </label>
+            <label class="font-semibold text-blue-700">Price:
+              <select id="filter-price" class="block w-full mt-1 rounded-lg border-gray-300 focus:ring-blue-500 focus:border-blue-500">
+                <option value="all">All</option>
+                <option value="low">Under $50</option>
+                <option value="mid">$50 - $100</option>
+                <option value="high">Over $100</option>
+              </select>
+            </label>
+            <button id="apply-filter-btn" class="filter-btn bg-blue-600 text-white rounded-lg px-4 py-2 font-bold hover:bg-blue-700 transition">Apply</button>
+            <button id="clear-filter-btn" class="back-btn bg-gray-200 text-blue-700 rounded-lg px-4 py-2 font-bold hover:bg-gray-300 transition">Clear</button>
+          </div>
+          <!-- Back Button on the right of filters -->
+          <button class="back-btn bg-blue-100 text-blue-700 font-bold px-6 py-2 rounded-lg shadow hover:bg-blue-200 transition ml-auto md:ml-4 mt-4 md:mt-0" style="white-space:nowrap;" onclick="window.history.back()">Back</button>
+        </div>
+      </div>
+
+      <!-- Product Grid -->
+      <section class="product-listing shop-listing-compact">
+        <div class="shop-listing-header flex items-center justify-between mb-6">
+          <h2 class="text-3xl md:text-4xl font-extrabold text-blue-700 tracking-tight">All Products</h2>
+        </div>
+        <div class="products grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8" id="shop-products">
+          <!-- Standardized Product Cards -->
+          <div class="bg-white rounded-2xl shadow-lg overflow-hidden flex flex-col hover:scale-105 transition-transform animate__animated animate__fadeInUp">
+            <img src="Images/women html file img/img1.jpeg" alt="Product 1" class="w-full h-64 object-cover">
+            <div class="p-5 flex-1 flex flex-col">
+              <div class="font-bold text-lg text-blue-700 mb-2">Product 1</div>
+              <div class="text-gray-600 mb-3 flex-1">Details on hover 1</div>
+              <div class="flex items-center justify-between mt-auto">
+                <span class="font-bold text-pink-600 text-xl">₹2,499</span>
+                <button class="px-4 py-2 bg-gradient-to-r from-blue-600 to-pink-500 text-white rounded-full font-semibold shadow hover:from-pink-500 hover:to-blue-600 transition">Add to Bag</button>
+              </div>
+            </div>
+          </div>
+          <div class="bg-white rounded-2xl shadow-lg overflow-hidden flex flex-col hover:scale-105 transition-transform animate__animated animate__fadeInUp">
+            <img src="Images/menchothing.jpeg" alt="Product 2" class="w-full h-64 object-cover">
+            <div class="p-5 flex-1 flex flex-col">
+              <div class="font-bold text-lg text-blue-700 mb-2">Product 2</div>
+              <div class="text-gray-600 mb-3 flex-1">Details on hover 2</div>
+              <div class="flex items-center justify-between mt-auto">
+                <span class="font-bold text-blue-600 text-xl">₹1,799</span>
+                <button class="px-4 py-2 bg-gradient-to-r from-blue-600 to-yellow-400 text-white rounded-full font-semibold shadow hover:from-yellow-400 hover:to-blue-600 transition">Add to Bag</button>
+              </div>
+            </div>
+          </div>
+          <div class="bg-white rounded-2xl shadow-lg overflow-hidden flex flex-col hover:scale-105 transition-transform animate__animated animate__fadeInUp">
+            <img src="Images/kidsclothing.jpeg" alt="Product 3" class="w-full h-64 object-cover">
+            <div class="p-5 flex-1 flex flex-col">
+              <div class="font-bold text-lg text-yellow-600 mb-2">Product 3</div>
+              <div class="text-gray-600 mb-3 flex-1">Details on hover 3</div>
+              <div class="flex items-center justify-between mt-auto">
+                <span class="font-bold text-yellow-500 text-xl">₹999</span>
+                <button class="px-4 py-2 bg-gradient-to-r from-yellow-400 to-pink-500 text-white rounded-full font-semibold shadow hover:from-pink-500 hover:to-yellow-400 transition">Add to Bag</button>
+              </div>
+            </div>
+          </div>
+          <div class="bg-white rounded-2xl shadow-lg overflow-hidden flex flex-col hover:scale-105 transition-transform animate__animated animate__fadeInUp">
+            <img src="Images/makup html file img/img1.jpeg" alt="Product 4" class="w-full h-64 object-cover">
+            <div class="p-5 flex-1 flex flex-col">
+              <div class="font-bold text-lg text-pink-600 mb-2">Product 4</div>
+              <div class="text-gray-600 mb-3 flex-1">Details on hover 4</div>
+              <div class="flex items-center justify-between mt-auto">
+                <span class="font-bold text-pink-500 text-xl">₹1,299</span>
+                <button class="px-4 py-2 bg-gradient-to-r from-pink-500 to-yellow-400 text-white rounded-full font-semibold shadow hover:from-yellow-400 hover:to-pink-500 transition">Add to Bag</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="relative w-full mt-8" id="shop-pagination">
+          <div class="flex flex-wrap justify-center gap-2 w-full">
+            <button class="pagination-btn px-3 py-1 rounded-lg bg-gray-200 text-blue-700 font-bold hover:bg-blue-100 transition flex-1 min-w-[60px] sm:min-w-[40px]" id="prev-page">Prev</button>
+            <button class="pagination-btn px-3 py-1 rounded-lg bg-blue-600 text-white font-bold hover:bg-blue-700 transition flex-1 min-w-[40px]" id="page-1">1</button>
+            <button class="pagination-btn px-3 py-1 rounded-lg bg-gray-200 text-blue-700 font-bold hover:bg-blue-100 transition flex-1 min-w-[40px]" id="page-2">2</button>
+            <button class="pagination-btn px-3 py-1 rounded-lg bg-gray-200 text-blue-700 font-bold hover:bg-blue-100 transition flex-1 min-w-[40px]" id="page-3">3</button>
+            <button class="pagination-btn px-3 py-1 rounded-lg bg-gray-200 text-blue-700 font-bold hover:bg-blue-100 transition flex-1 min-w-[40px]" id="page-4">4</button>
+            <button class="pagination-btn px-3 py-1 rounded-lg bg-gray-200 text-blue-700 font-bold hover:bg-blue-100 transition flex-1 min-w-[60px] sm:min-w-[40px]" id="next-page">Next</button>
+          </div>
+        </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="mt-16 text-center text-gray-500 text-sm py-8">
+        &copy; 2025 ZARA. All rights reserved.
+    </footer>
+    <script src="script.js"></script>
+    <script>
+    // Simple pagination logic for demo (4 pages, 4 products per page)
+    const allProducts = [
+      // All products renamed and hover details standardized
+      {
+        img: 'Images/women html file img/img1.jpeg',
+        title: 'Product 1',
+        desc: 'Details on hover 1',
+        price: '₹2,499',
+        color: 'text-pink-600',
+        btn: 'from-blue-600 to-pink-500',
+      },
+      {
+        img: 'Images/menchothing.jpeg',
+        title: 'Product 2',
+        desc: 'Details on hover 2',
+        price: '₹1,799',
+        color: 'text-blue-600',
+        btn: 'from-blue-600 to-yellow-400',
+      },
+      {
+        img: 'Images/kidsclothing.jpeg',
+        title: 'Product 3',
+        desc: 'Details on hover 3',
+        price: '₹999',
+        color: 'text-yellow-600',
+        btn: 'from-yellow-400 to-pink-500',
+      },
+      {
+        img: 'Images/makup html file img/img1.jpeg',
+        title: 'Product 4',
+        desc: 'Details on hover 4',
+        price: '₹1,299',
+        color: 'text-pink-500',
+        btn: 'from-pink-500 to-yellow-400',
+      },
+      {
+        img: 'Images/women html file img/img2.jpeg',
+        title: 'Product 5',
+        desc: 'Details on hover 5',
+        price: '₹2,199',
+        color: 'text-pink-600',
+        btn: 'from-blue-600 to-pink-500',
+      },
+      {
+        img: 'Images/menchothing.jpeg',
+        title: 'Product 6',
+        desc: 'Details on hover 6',
+        price: '₹2,999',
+        color: 'text-blue-600',
+        btn: 'from-blue-600 to-yellow-400',
+      },
+      {
+        img: 'Images/kidsclothing.jpeg',
+        title: 'Product 7',
+        desc: 'Details on hover 7',
+        price: '₹1,199',
+        color: 'text-yellow-600',
+        btn: 'from-yellow-400 to-pink-500',
+      },
+      {
+        img: 'Images/makup html file img/img2.jpeg',
+        title: 'Product 8',
+        desc: 'Details on hover 8',
+        price: '₹799',
+        color: 'text-pink-500',
+        btn: 'from-pink-500 to-yellow-400',
+      },
+      {
+        img: 'Images/women html file img/img3.jpeg',
+        title: 'Product 9',
+        desc: 'Details on hover 9',
+        price: '₹3,499',
+        color: 'text-pink-600',
+        btn: 'from-blue-600 to-pink-500',
+      },
+      {
+        img: 'Images/menchothing.jpeg',
+        title: 'Product 10',
+        desc: 'Details on hover 10',
+        price: '₹1,599',
+        color: 'text-blue-600',
+        btn: 'from-blue-600 to-yellow-400',
+      },
+      {
+        img: 'Images/kidsclothing.jpeg',
+        title: 'Product 11',
+        desc: 'Details on hover 11',
+        price: '₹699',
+        color: 'text-yellow-600',
+        btn: 'from-yellow-400 to-pink-500',
+      },
+      {
+        img: 'Images/makup html file img/img3.jpeg',
+        title: 'Product 12',
+        desc: 'Details on hover 12',
+        price: '₹1,099',
+        color: 'text-pink-500',
+        btn: 'from-pink-500 to-yellow-400',
+      },
+      {
+        img: 'Images/women html file img/img4.jpeg',
+        title: 'Product 13',
+        desc: 'Details on hover 13',
+        price: '₹4,299',
+      },
+      {
+        img: 'Images/menchothing.jpeg',
+        title: 'Product 14',
+        desc: 'Details on hover 14',
+        price: '₹999',
+      },
+      {
+        img: 'Images/kidsclothing.jpeg',
+        title: 'Product 15',
+        desc: 'Details on hover 15',
+        price: '₹1,499',
+      },
+      {
+        img: 'Images/makup html file img/img4.jpeg',
+        title: 'Product 16',
+        desc: 'Details on hover 16',
+        price: '₹599',
+      },
+  ];
+    let currentPage = 1;
+    const productsPerPage = 4;
+    function renderProducts(page) {
+      const start = (page - 1) * productsPerPage;
+      const end = start + productsPerPage;
+      const products = allProducts.slice(start, end);
+      const container = document.getElementById('shop-products');
+      container.innerHTML = '';
+      products.forEach(prod => {
+        container.innerHTML += `
+          <div class="bg-white rounded-2xl shadow-lg overflow-hidden flex flex-col hover:scale-105 transition-transform animate__animated animate__fadeInUp">
+            <img src="${prod.img}" alt="${prod.title}" class="w-full h-48 sm:h-56 md:h-64 object-cover">
+            <div class="p-4 flex-1 flex flex-col">
+              <div class="font-bold text-lg text-gray-900 mb-2">${prod.title}</div>
+              <div class="text-gray-600 mb-3 flex-1">${prod.desc}</div>
+              <div class="flex items-center justify-between mt-auto">
+                <span class="font-bold text-xl text-black">${prod.price}</span>
+                <button class="add-to-cart-btn px-4 py-2 bg-blue-600 text-white rounded-full font-semibold shadow hover:bg-blue-800 transition" data-title="${prod.title}" data-price="${prod.price}" data-img="${prod.img}">Add to Cart</button>
+              </div>
+            </div>
+          </div>
+        `;
+      });
+    }
+    function updatePagination() {
+      for (let i = 1; i <= 4; i++) {
+        document.getElementById('page-' + i).classList.remove('bg-blue-600','text-white');
+        document.getElementById('page-' + i).classList.add('bg-gray-200','text-blue-700');
+      }
+      document.getElementById('page-' + currentPage).classList.add('bg-blue-600','text-white');
+      document.getElementById('page-' + currentPage).classList.remove('bg-gray-200','text-blue-700');
+    }
+    document.addEventListener('DOMContentLoaded', function() {
+      renderProducts(currentPage);
+      updatePagination();
+      for (let i = 1; i <= 4; i++) {
+        document.getElementById('page-' + i).onclick = function() {
+          currentPage = i;
+          renderProducts(currentPage);
+          updatePagination();
+          attachAddToCartEvents();
+        };
+      }
+      document.getElementById('prev-page').onclick = function() {
+        if (currentPage > 1) {
+          currentPage--;
+          renderProducts(currentPage);
+          updatePagination();
+          attachAddToCartEvents();
+        }
+      };
+      document.getElementById('next-page').onclick = function() {
+        if (currentPage < 4) {
+          currentPage++;
+          renderProducts(currentPage);
+          updatePagination();
+          attachAddToCartEvents();
+        }
+      };
+      // Attach add-to-cart events on initial load
+      attachAddToCartEvents();
+      function attachAddToCartEvents() {
+        document.querySelectorAll('.add-to-cart-btn').forEach(function(btn) {
+          btn.addEventListener('click', function() {
+            const title = btn.getAttribute('data-title');
+            const price = btn.getAttribute('data-price');
+            const img = btn.getAttribute('data-img');
+            let cart = JSON.parse(localStorage.getItem('cart') || '[]');
+            const existing = cart.find(item => item.title === title);
+            if (existing) {
+              existing.qty += 1;
+            } else {
+              cart.push({ title, price, img, qty: 1 });
+            }
+            localStorage.setItem('cart', JSON.stringify(cart));
+            btn.textContent = 'Added!';
+            setTimeout(() => { btn.textContent = 'Add to Cart'; }, 1200);
+          });
+        });
+      }
+    });
+    </script>
+    <script src="shop.js"></script>
+</body>
+</html>

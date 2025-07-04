@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - ZARA</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="checkout.css">
+</head>
+<body>
+    <header>
+        <a href="index.html" class="logo">ZARA</a>
+        <nav>
+            <a href="woman.html">WOMAN</a>
+            <a href="man.html">MAN</a>
+            <a href="kids.html">KIDS</a>
+            <a href="sale.html">SALE</a>
+            <a href="makeup.html">MAKEUP</a>
+            <a href="gallery.html">GALLERY</a>
+        </nav>
+    </header>
+    <main class="checkout-main">
+        <button class="back-btn" onclick="window.history.back()" style="margin-bottom:1.5rem;">&larr; Back to Bag</button>
+        <h2>Checkout</h2>
+        <div class="checkout-details-container" style="display:flex;flex-wrap:wrap;gap:2.5rem;align-items:flex-start;justify-content:space-between;">
+            <div class="checkout-products" id="checkout-products" style="flex:1 1 340px;min-width:300px;max-width:420px;background:#f8fafc;border-radius:12px;box-shadow:0 2px 12px rgba(80,80,180,0.07);padding:1.5rem 1.2rem 1.2rem 1.2rem;margin-bottom:1.5rem;">
+                <!-- Products will be loaded here -->
+            </div>
+            <form class="checkout-form" id="checkout-form">
+                <label>Name:<input type="text" required placeholder="Your full name"></label>
+                <label>Address:<input type="text" required placeholder="Delivery address"></label>
+                <label>Phone:<input type="tel" required placeholder="Phone number"></label>
+                <label>Email:<input type="email" required placeholder="Email address"></label>
+                <label>Payment Method:
+                    <select required>
+                        <option value="card">Credit/Debit Card</option>
+                        <option value="upi">UPI</option>
+                        <option value="cod">Cash on Delivery</option>
+                    </select>
+                </label>
+                <button type="submit">Place Order</button>
+            </form>
+        </div>
+        <script src="checkout.js"></script>
+    </main>
+    <footer>&copy; 2025 ZARA. All rights reserved.</footer>
+</body>
+</html>

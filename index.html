@@ -1,0 +1,761 @@
+
+<!-- MODERNIZED ZARA HOMEPAGE (Restored) -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZARA | Modern Fashion</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Tailwind CSS CDN for utility classes -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <!-- Animate.css for quick animations -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <button class="accessibility-btn" aria-label="Accessibility Options" tabindex="0" id="accessibility-main-btn">
+      <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" style="display:block;margin:auto;">
+        <circle cx="12" cy="12" r="11" fill="#2563eb" stroke="#fff" stroke-width="2"/>
+        <path d="M12 7a2 2 0 110 4 2 2 0 010-4zm-5 7c0-1.1.9-2 2-2h6a2 2 0 012 2v1a2 2 0 01-2 2h-1v2h-2v-2h-1a2 2 0 01-2-2v-1z" fill="#fff"/>
+      </svg>
+    </button>
+    <div class="accessibility-menu" id="accessibility-menu" style="display:none;">
+      <button class="accessibility-action" title="Increase Text Size" tabindex="0">A+</button>
+      <button class="accessibility-action" title="Decrease Text Size" tabindex="0">A-</button>
+      <button class="accessibility-action" title="High Contrast" tabindex="0">
+        <svg width="20" height="20" viewBox="0 0 20 20"><circle cx="10" cy="10" r="9" fill="#222" stroke="#fff" stroke-width="2"/><path d="M10 2a8 8 0 0 1 0 16V2z" fill="#fff"/></svg>
+      </button>
+      <button class="accessibility-action" title="Grayscale" tabindex="0">
+        <svg width="20" height="20" viewBox="0 0 20 20"><circle cx="10" cy="10" r="9" fill="#bbb" stroke="#fff" stroke-width="2"/></svg>
+      </button>
+      <button class="accessibility-action" title="Reset" tabindex="0">
+        <svg width="20" height="20" viewBox="0 0 20 20"><circle cx="10" cy="10" r="9" fill="#2563eb" stroke="#fff" stroke-width="2"/><path d="M10 5v5l4 2" stroke="#fff" stroke-width="2" fill="none"/></svg>
+      </button>
+    </div>
+    <!-- Slider moved below hero -->
+    <header class="navbar-fancy">
+      <div class="navbar-container">
+        <a href="index.html" class="navbar-logo">ZARA</a>
+        <nav class="navbar-links" id="navbarLinks">
+          <a href="woman.html">WOMAN</a>
+          <a href="man.html">MAN</a>
+          <a href="kids.html">KIDS</a>
+          <a href="sale.html">SALE</a>
+          <a href="makeup.html">MAKEUP</a>
+          <a href="gallery.html">GALLERY</a>
+        </nav>
+        <div class="navbar-actions">
+          <form class="navbar-search" action="#" onsubmit="return false;">
+            <input type="text" placeholder="Search..." id="searchInput">
+            <button type="submit" id="searchBtn" aria-label="Search"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></button>
+          </form>
+          <a href="login.html" class="icon-link" title="Login"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 4-7 8-7s8 3 8 7"/></svg></a>
+          <a href="help.html" class="icon-link" title="Help"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#f472b6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 1 1 5.82 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12" y2="17"/></svg></a>
+          <a href="bag.html" class="icon-link" title="Shopping Bag"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fbbf24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2l1.5 2h9L18 2"/><rect x="3" y="6" width="18" height="14" rx="2"/><path d="M16 10a4 4 0 0 1-8 0"/></svg></a>
+          <button class="navbar-toggle" id="navbarToggle" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+        </div>
+      </div>
+    </header>
+    <style>
+    .navbar-fancy {
+      width: 100%;
+      background: linear-gradient(90deg, #f6f7fb 60%, #fbbf24 100%);
+      box-shadow: 0 2px 18px #2563eb11;
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      padding: 0;
+    }
+    .navbar-container {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.7rem 2vw 0.7rem 2vw;
+      position: relative;
+    }
+    .navbar-logo {
+      font-size: 2.1rem;
+      font-weight: 900;
+      letter-spacing: 0.13em;
+      color: #2563eb;
+      background: linear-gradient(90deg, #2563eb 30%, #f472b6 60%, #fbbf24 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      text-fill-color: transparent;
+      text-shadow: 0 2px 18px #2563eb22, 0 1px 0 #fff;
+      text-decoration: none;
+      transition: color 0.18s;
+    }
+    .navbar-links {
+      display: flex;
+      gap: 1.7rem;
+      align-items: center;
+      font-weight: 700;
+      font-size: 1.08rem;
+      letter-spacing: 0.04em;
+    }
+    .navbar-links a {
+      color: #222;
+      text-decoration: none;
+      padding: 0.5rem 1.1rem;
+      border-radius: 1.2rem;
+      transition: background 0.18s, color 0.18s;
+      position: relative;
+    }
+    .navbar-links a:hover, .navbar-links a.active {
+      background: linear-gradient(90deg, #fbbf24 0%, #f472b6 100%);
+      color: #fff;
+      box-shadow: 0 2px 12px #fbbf2433;
+    }
+    .navbar-actions {
+      display: flex;
+      align-items: center;
+      gap: 1.1rem;
+      position: relative;
+    }
+    .navbar-search {
+      display: flex;
+      align-items: center;
+      background: #fff;
+      border-radius: 2rem;
+      box-shadow: 0 2px 8px #2563eb11;
+      padding: 0.2rem 0.7rem 0.2rem 1rem;
+      margin-right: 0.7rem;
+    }
+    .navbar-search input {
+      border: none;
+      outline: none;
+      font-size: 1rem;
+      background: transparent;
+      padding: 0.4rem 0.5rem 0.4rem 0;
+      color: #222;
+      width: 120px;
+      transition: width 0.18s;
+    }
+    .navbar-search input:focus {
+      width: 180px;
+    }
+    .navbar-search button {
+      background: none;
+      border: none;
+      padding: 0 0.2rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+    }
+    .icon-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.45rem;
+      background: #fff;
+      border-radius: 50%;
+      width: 2.3rem;
+      height: 2.3rem;
+      box-shadow: 0 2px 8px #2563eb11;
+      transition: background 0.18s, box-shadow 0.18s;
+      margin-left: 0.1rem;
+    }
+    .icon-link:hover {
+      background: linear-gradient(90deg, #fbbf24 0%, #f472b6 100%);
+      box-shadow: 0 4px 18px #fbbf2433;
+    }
+    .navbar-toggle {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 2.3rem;
+      height: 2.3rem;
+      background: #fff;
+      border: none;
+      border-radius: 50%;
+      box-shadow: 0 2px 8px #2563eb11;
+      cursor: pointer;
+      margin-left: 0.2rem;
+      transition: background 0.18s, box-shadow 0.18s;
+      z-index: 100;
+    }
+    .navbar-toggle span {
+      display: block;
+      width: 1.3rem;
+      height: 3px;
+      background: #2563eb;
+      margin: 2.5px 0;
+      border-radius: 2px;
+      transition: all 0.22s;
+    }
+    @media (max-width: 900px) {
+      .navbar-links {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: #fff;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.2rem;
+        padding: 1.1rem 2vw 1.1rem 2vw;
+        border-radius: 0 0 1.2rem 1.2rem;
+        box-shadow: 0 8px 24px #2563eb11;
+        display: none;
+      }
+      .navbar-links.open {
+        display: flex;
+      }
+      .navbar-toggle {
+        display: flex;
+      }
+      .navbar-search input {
+        width: 80px;
+      }
+      .navbar-search input:focus {
+        width: 120px;
+      }
+    }
+    </style>
+    <script>
+    // Navbar mobile toggle
+    document.addEventListener('DOMContentLoaded', function() {
+      var toggle = document.getElementById('navbarToggle');
+      var links = document.getElementById('navbarLinks');
+      if (toggle && links) {
+        toggle.addEventListener('click', function() {
+          links.classList.toggle('open');
+        });
+      }
+    });
+    </script>
+    <!-- Hero Section with animated background and overlay -->
+    <section class="hero relative flex flex-col items-center justify-center min-h-[60vh] bg-gradient-to-br from-blue-100 via-pink-50 to-yellow-100 overflow-hidden">
+      <div class="absolute inset-0 bg-gradient-to-br from-blue-200 via-pink-100 to-yellow-100 opacity-80 animate__animated animate__fadeIn"></div>
+      <div class="hero-content text-center z-10 animate__animated animate__fadeInDown">
+        <div class="hero-title text-5xl md:text-7xl font-extrabold mb-4 text-blue-700 tracking-tight drop-shadow-lg">NEW COLLECTION</div>
+        <div class="text-xl md:text-2xl font-medium mb-6 text-gray-700">Discover the latest trends in fashion</div>
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4 w-full mt-4">
+          <button class="hero-btn px-10 py-4 bg-gradient-to-r from-blue-600 via-pink-500 to-yellow-400 text-white rounded-full shadow-xl hover:from-pink-500 hover:to-blue-600 text-lg font-bold transition-all animate__animated animate__pulse animate__infinite" onclick="window.location.href='shop.html'">SHOP NOW</button>
+        </div>
+        </div>
+      </div>
+      <div class="absolute bottom-0 left-1/2 transform -translate-x-1/2 flex gap-4 z-0 opacity-80">
+        <img src="Images/women html file img/img1.jpeg" class="w-32 h-44 object-cover rounded-2xl shadow-lg border-4 border-white animate__animated animate__fadeInLeft" style="animation-delay:0.2s;">
+        <img src="Images/menchothing.jpeg" class="w-32 h-44 object-cover rounded-2xl shadow-lg border-4 border-white animate__animated animate__fadeInUp" style="animation-delay:0.4s;">
+        <img src="Images/kidsclothing.jpeg" class="w-32 h-44 object-cover rounded-2xl shadow-lg border-4 border-white animate__animated animate__fadeInRight" style="animation-delay:0.6s;">
+      </div>
+    </section>
+    <!-- Modern Hero Section: Glassmorphism, Split Layout, Collage Images, Sparkles -->
+    <section class="modern-hero-section relative flex flex-col md:flex-row items-center justify-between max-w-6xl mx-auto my-12 px-6 min-h-[400px] animate__animated animate__fadeInUp">
+      <!-- Sparkle/Floating shapes background -->
+      <div class="pointer-events-none absolute inset-0 z-0">
+        <svg class="absolute top-10 left-10 opacity-30 animate-pulse" width="60" height="60"><circle cx="30" cy="30" r="28" fill="#fbbf24"/></svg>
+        <svg class="absolute bottom-12 right-24 opacity-20 animate-bounce" width="40" height="40"><rect width="40" height="40" rx="12" fill="#60a5fa"/></svg>
+        <svg class="absolute top-1/2 left-1/2 opacity-20 animate-spin-slow" width="32" height="32"><polygon points="16,0 32,32 0,32" fill="#f472b6"/></svg>
+      </div>
+      <!-- Glassmorphism Card (Text Side) -->
+      <div class="z-10 bg-white/60 backdrop-blur-lg rounded-3xl shadow-2xl p-10 md:max-w-lg w-full flex flex-col items-start gap-6 border border-white/40">
+        <h1 class="text-5xl md:text-6xl font-extrabold leading-tight mb-2 text-gray-900 drop-shadow-lg">
+          <span class="bg-gradient-to-r from-pink-500 via-blue-600 to-yellow-400 bg-clip-text text-transparent">ZARA</span><br>
+          <span class="text-gray-800">Spring/Summer 2025</span>
+        </h1>
+        <p class="text-lg md:text-xl font-medium text-gray-700 mb-2">Elevate your wardrobe with the latest arrivals for <span class="font-bold text-pink-600">Women</span>, <span class="font-bold text-blue-600">Men</span>, and <span class="font-bold text-yellow-500">Kids</span>. Redefine your style with bold, modern fashion.</p>
+        <div class="flex gap-4 flex-wrap mt-2">
+          <a href="woman.html" class="px-7 py-3 bg-pink-500 hover:bg-pink-600 rounded-full font-semibold shadow text-white transition text-lg">Shop Women</a>
+          <a href="man.html" class="px-7 py-3 bg-blue-600 hover:bg-blue-700 rounded-full font-semibold shadow text-white transition text-lg">Shop Men</a>
+          <a href="kids.html" class="px-7 py-3 bg-yellow-400 hover:bg-yellow-500 rounded-full font-semibold shadow text-gray-900 transition text-lg">Shop Kids</a>
+        </div>
+      </div>
+      <!-- Collage of Product Images (Right Side) -->
+      <div class="z-10 mt-10 md:mt-0 md:ml-10 flex-1 flex items-center justify-center relative min-h-[320px] w-full">
+        <div class="relative w-[320px] h-[320px]">
+          <img src="Images/women html file img/img1.jpeg" alt="Women" class="absolute top-0 left-8 w-40 h-56 object-cover rounded-2xl shadow-2xl border-4 border-pink-200 transform rotate-[-8deg] hover:scale-105 transition duration-300">
+          <img src="Images/menchothing.jpeg" alt="Men" class="absolute top-20 right-0 w-36 h-48 object-cover rounded-2xl shadow-2xl border-4 border-blue-200 transform rotate-[7deg] hover:scale-105 transition duration-300">
+          <img src="Images/kidsclothing.jpeg" alt="Kids" class="absolute bottom-0 left-1/2 w-32 h-40 object-cover rounded-2xl shadow-2xl border-4 border-yellow-200 transform -translate-x-1/2 rotate-[3deg] hover:scale-105 transition duration-300">
+          <!-- Decorative floating icon -->
+          <svg class="absolute -top-6 left-1/2 -translate-x-1/2 animate-pulse" width="32" height="32"><circle cx="16" cy="16" r="14" fill="#fff" opacity="0.7"/></svg>
+        </div>
+      </div>
+    </section>
+    <section class="categories grid grid-cols-1 sm:grid-cols-3 gap-8 max-w-5xl mx-auto my-12 px-6 animate__animated animate__fadeInUp">
+      <div class="category group cursor-pointer rounded-2xl overflow-hidden shadow-lg hover:scale-105 transition-transform bg-white">
+        <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=400&q=80" alt="Woman" class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500">
+        <div class="category-title text-center py-4 text-2xl font-bold text-blue-700 group-hover:text-pink-600 transition">WOMAN</div>
+      </div>
+      <div class="category group cursor-pointer rounded-2xl overflow-hidden shadow-lg hover:scale-105 transition-transform bg-white">
+        <img src="Images/menchothing.jpeg" alt="Man" class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500">
+        <div class="category-title text-center py-4 text-2xl font-bold text-green-700 group-hover:text-blue-600 transition">MAN</div>
+      </div>
+      <div class="category group cursor-pointer rounded-2xl overflow-hidden shadow-lg hover:scale-105 transition-transform bg-white">
+        <img src="Images/kidsclothing.jpeg" alt="Kids" class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500">
+        <div class="category-title text-center py-4 text-2xl font-bold text-yellow-600 group-hover:text-blue-600 transition">KIDS</div>
+      </div>
+    </section>
+
+    <!-- Makeup Collection Preview (Modern, Responsive, Stylish) -->
+    <section class="makeup-collection-section">
+      <h2 class="makeup-collection-title">Makeup Collection</h2>
+      <div class="makeup-collection-description">Explore our vibrant, trendsetting makeup range for every mood and moment.</div>
+      <div class="makeup-collection-grid">
+        <div class="makeup-card"><img src="Images/makup html file img/img1.jpeg" alt="Product 1"><div class="makeup-card-label">Product 1</div></div>
+        <div class="makeup-card"><img src="Images/makup html file img/img2.jpeg" alt="Product 2"><div class="makeup-card-label">Product 2</div></div>
+        <div class="makeup-card"><img src="Images/makup html file img/img3.jpeg" alt="Product 3"><div class="makeup-card-label">Product 3</div></div>
+        <div class="makeup-card"><img src="Images/makup html file img/img4.jpeg" alt="Product 4"><div class="makeup-card-label">Product 4</div></div>
+        <div class="makeup-card"><img src="Images/makup html file img/img5.jpeg" alt="Product 5"><div class="makeup-card-label">Product 5</div></div>
+        <div class="makeup-card"><img src="Images/makup html file img/img6.jpeg" alt="Product 6"><div class="makeup-card-label">Product 6</div></div>
+        <div class="makeup-card"><img src="Images/makup html file img/img7.jpeg" alt="Product 7"><div class="makeup-card-label">Product 7</div></div>
+        <div class="makeup-card"><img src="Images/makup html file img/img8.jpeg" alt="Product 8"><div class="makeup-card-label">Product 8</div></div>
+        <div class="makeup-card"><img src="Images/makup html file img/img9.jpeg" alt="Product 9"><div class="makeup-card-label">Product 9</div></div>
+        <div class="makeup-card"><img src="Images/makup html file img/img10.jpeg" alt="Product 10"><div class="makeup-card-label">Product 10</div></div>
+      </div>
+      <div class="makeup-collection-btn-wrap">
+        <a href="makeup.html" class="makeup-collection-btn">View All Makeup</a>
+      </div>
+    </section>
+    <style>
+    .makeup-collection-section {
+      max-width: 1200px;
+      margin: 0 auto 3.5rem auto;
+      padding: 2.5rem 1.5rem 1.5rem 1.5rem;
+      background: linear-gradient(120deg, #f6f7fb 0%, #fdf2f8 100%);
+      border-radius: 2.2rem;
+      box-shadow: 0 4px 32px 0 rgba(244,114,182,0.08), 0 1.5px 8px 0 rgba(37,99,235,0.07);
+    }
+    .makeup-collection-title {
+      text-align: center;
+      font-size: 2.2rem;
+      font-weight: 900;
+      letter-spacing: 0.08em;
+      color: #f472b6;
+      margin-bottom: 0.5rem;
+      text-shadow: 0 2px 18px #f472b633, 0 1px 0 #fff;
+    }
+    .makeup-collection-description {
+      text-align: center;
+      color: #444;
+      font-size: 1.13rem;
+      margin-bottom: 2.2rem;
+      font-weight: 500;
+      letter-spacing: 0.03em;
+    }
+    .makeup-collection-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1.7rem;
+      margin-bottom: 2.2rem;
+    }
+    .makeup-card {
+      background: #fff;
+      border-radius: 1.3rem;
+      overflow: hidden;
+      box-shadow: 0 4px 24px 0 rgba(244,114,182,0.10), 0 1.5px 8px 0 rgba(37,99,235,0.08);
+      transition: transform 0.22s, box-shadow 0.22s;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+    }
+    .makeup-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      transition: transform 0.22s, filter 0.22s;
+      filter: grayscale(0.08) brightness(0.98);
+    }
+    .makeup-card-label {
+      background: linear-gradient(90deg, #f472b6 30%, #fbbf24 100%);
+      color: #fff;
+      font-weight: 700;
+      font-size: 1.08rem;
+      padding: 0.7rem 0.5rem;
+      text-align: center;
+      letter-spacing: 0.04em;
+      border-radius: 0 0 1.3rem 1.3rem;
+      box-shadow: 0 2px 12px #f472b633;
+      margin-top: auto;
+    }
+    .makeup-card:hover {
+      transform: translateY(-10px) scale(1.04) rotate(-1.5deg);
+      box-shadow: 0 12px 36px 0 rgba(244,114,182,0.18), 0 2px 12px 0 rgba(37,99,235,0.13);
+      z-index: 2;
+    }
+    .makeup-card:hover img {
+      transform: scale(1.08) rotate(1.5deg);
+      filter: grayscale(0) brightness(1.04) saturate(1.1);
+    }
+    .makeup-collection-btn-wrap {
+      text-align: center;
+    }
+    .makeup-collection-btn {
+      display: inline-block;
+      background: linear-gradient(90deg, #f472b6 30%, #fbbf24 100%);
+      color: #fff;
+      font-weight: 600;
+      padding: 0.8rem 2.3rem;
+      border-radius: 2rem;
+      box-shadow: 0 2px 12px #f472b622;
+      text-decoration: none;
+      font-size: 1.13rem;
+      letter-spacing: 0.04em;
+      transition: background 0.18s, box-shadow 0.18s, color 0.18s;
+    }
+    .makeup-collection-btn:hover {
+      background: linear-gradient(90deg, #fbbf24 30%, #f472b6 100%);
+      color: #fff;
+      box-shadow: 0 4px 18px #fbbf2433;
+    }
+    @media (max-width: 900px) {
+      .makeup-collection-grid {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      }
+      .makeup-card img {
+        height: 120px;
+      }
+    }
+    @media (max-width: 600px) {
+      .makeup-collection-title {
+        font-size: 1.3rem;
+      }
+      .makeup-collection-grid {
+        gap: 0.7rem;
+      }
+      .makeup-card img {
+        height: 80px;
+      }
+      .makeup-card-label {
+        font-size: 0.95rem;
+        padding: 0.5rem 0.3rem;
+      }
+      .makeup-collection-section {
+        padding: 1.2rem 0.3rem 0.7rem 0.3rem;
+      }
+    }
+    </style>
+    <footer>
+        <!-- intentionally left blank for spacing -->
+    </footer>
+
+    <!-- Stylish Accordion Section (FAQ) -->
+    <section class="accordion-section-fancy">
+      <h2 class="accordion-title-fancy">Frequently Asked Questions</h2>
+      <div class="accordion-fancy" id="faqAccordion">
+        <div class="accordion-fancy-item">
+          <button class="accordion-fancy-header">How do I place an order?<span class="accordion-arrow">&#9662;</span></button>
+          <div class="accordion-fancy-body">Browse our collections, add items to your bag, and proceed to checkout. You can buy as a guest or log in for a faster experience.</div>
+        </div>
+        <div class="accordion-fancy-item">
+          <button class="accordion-fancy-header">What payment methods are accepted?<span class="accordion-arrow">&#9662;</span></button>
+          <div class="accordion-fancy-body">We accept credit/debit cards, UPI, net banking, and major wallets for your convenience.</div>
+        </div>
+        <div class="accordion-fancy-item">
+          <button class="accordion-fancy-header">How can I track my order?<span class="accordion-arrow">&#9662;</span></button>
+          <div class="accordion-fancy-body">After purchase, you’ll receive an email with tracking details. You can also check your order status in your account.</div>
+        </div>
+        <div class="accordion-fancy-item">
+          <button class="accordion-fancy-header">Can I return or exchange items?<span class="accordion-arrow">&#9662;</span></button>
+          <div class="accordion-fancy-body">Yes! We offer easy returns and exchanges within 30 days of delivery. See our Returns Policy for details.</div>
+        </div>
+      </div>
+    </section>
+    <style>
+    .accordion-section-fancy {
+      max-width: 800px;
+      margin: 3.5rem auto 2.5rem auto;
+      background: linear-gradient(120deg, #f6f7fb 0%, #e0e7ff 100%);
+      border-radius: 1.7rem;
+      box-shadow: 0 4px 32px 0 rgba(37,99,235,0.07), 0 1.5px 8px 0 rgba(244,114,182,0.07);
+      padding: 2.2rem 1.2rem 1.2rem 1.2rem;
+    }
+    .accordion-title-fancy {
+      text-align: center;
+      font-size: 2rem;
+      font-weight: 900;
+      letter-spacing: 0.08em;
+      color: #2563eb;
+      margin-bottom: 1.2rem;
+      text-shadow: 0 2px 18px #2563eb33, 0 1px 0 #fff;
+    }
+    .accordion-fancy {
+      display: flex;
+      flex-direction: column;
+      gap: 1.1rem;
+    }
+    .accordion-fancy-item {
+      background: #fff;
+      border-radius: 1.1rem;
+      box-shadow: 0 2px 12px 0 rgba(244,114,182,0.08);
+      overflow: hidden;
+      transition: box-shadow 0.18s;
+    }
+    .accordion-fancy-header {
+      width: 100%;
+      background: none;
+      border: none;
+      outline: none;
+      font-size: 1.13rem;
+      font-weight: 700;
+      color: #2563eb;
+      padding: 1.1rem 1.5rem 1.1rem 1.2rem;
+      text-align: left;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      transition: background 0.18s, color 0.18s;
+    }
+    .accordion-fancy-header:hover, .accordion-fancy-header.active {
+      background: linear-gradient(90deg, #fbbf24 0%, #f472b6 100%);
+      color: #fff;
+    }
+    .accordion-arrow {
+      margin-left: 1rem;
+      font-size: 1.2em;
+      transition: transform 0.22s;
+    }
+    .accordion-fancy-header.active .accordion-arrow {
+      transform: rotate(180deg);
+    }
+    .accordion-fancy-body {
+      max-height: 0;
+      overflow: hidden;
+      background: #f6f7fb;
+      color: #444;
+      font-size: 1.05rem;
+      padding: 0 1.5rem;
+      transition: max-height 0.32s cubic-bezier(0.4,0,0.2,1), padding 0.22s;
+    }
+    .accordion-fancy-item.open .accordion-fancy-body {
+      max-height: 200px;
+      padding: 1.1rem 1.5rem 1.3rem 1.5rem;
+    }
+    @media (max-width: 600px) {
+      .accordion-section-fancy {
+        padding: 1.1rem 0.3rem 0.7rem 0.3rem;
+      }
+      .accordion-title-fancy {
+        font-size: 1.2rem;
+      }
+      .accordion-fancy-header {
+        font-size: 1rem;
+        padding: 0.8rem 1rem 0.8rem 0.7rem;
+      }
+      .accordion-fancy-body {
+        font-size: 0.97rem;
+        padding: 0 1rem;
+      }
+      .accordion-fancy-item.open .accordion-fancy-body {
+        padding: 0.7rem 1rem 1rem 1rem;
+      }
+    }
+    </style>
+    <script>
+    // Accordion open/close logic
+    document.addEventListener('DOMContentLoaded', function() {
+      var accHeaders = document.querySelectorAll('.accordion-fancy-header');
+      accHeaders.forEach(function(header) {
+        header.addEventListener('click', function() {
+          var item = header.parentElement;
+          var open = item.classList.contains('open');
+          document.querySelectorAll('.accordion-fancy-item').forEach(function(i) {
+            i.classList.remove('open');
+            i.querySelector('.accordion-fancy-header').classList.remove('active');
+          });
+          if (!open) {
+            item.classList.add('open');
+            header.classList.add('active');
+          }
+        });
+      });
+    });
+    </script>
+
+    <!-- Stylish Comments/Testimonials Section -->
+    <section class="testimonials-section-fancy">
+      <h2 class="testimonials-title-fancy">What Our Customers Say</h2>
+      <div class="testimonials-fancy">
+        <div class="testimonial-fancy">
+          <div class="testimonial-fancy-quote">“Absolutely love the new collection! The quality is amazing.”</div>
+          <div class="testimonial-fancy-author">— Priya S.</div>
+        </div>
+        <div class="testimonial-fancy">
+          <div class="testimonial-fancy-quote">“Fast delivery and beautiful packaging. Will shop again!”</div>
+          <div class="testimonial-fancy-author">— Rahul M.</div>
+        </div>
+        <div class="testimonial-fancy">
+          <div class="testimonial-fancy-quote">“Great customer service and easy returns. Highly recommend.”</div>
+          <div class="testimonial-fancy-author">— Ayesha K.</div>
+        </div>
+      </div>
+    </section>
+    <style>
+    .testimonials-section-fancy {
+      max-width: 900px;
+      margin: 3.5rem auto 2.5rem auto;
+      background: linear-gradient(120deg, #f6f7fb 0%, #e0e7ff 100%);
+      border-radius: 1.7rem;
+      box-shadow: 0 4px 32px 0 rgba(244,114,182,0.07), 0 1.5px 8px 0 rgba(37,99,235,0.07);
+      padding: 2.2rem 1.2rem 1.2rem 1.2rem;
+    }
+    .testimonials-title-fancy {
+      text-align: center;
+      font-size: 2rem;
+      font-weight: 900;
+      letter-spacing: 0.08em;
+      color: #f472b6;
+      margin-bottom: 1.2rem;
+      text-shadow: 0 2px 18px #f472b633, 0 1px 0 #fff;
+    }
+    .testimonials-fancy {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      justify-content: center;
+    }
+    .testimonial-fancy {
+      background: #fff;
+      border-radius: 1.1rem;
+      box-shadow: 0 2px 12px 0 rgba(244,114,182,0.08);
+      padding: 1.5rem 1.3rem 1.1rem 1.3rem;
+      max-width: 320px;
+      min-width: 220px;
+      flex: 1 1 220px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      position: relative;
+      transition: box-shadow 0.18s, transform 0.18s;
+    }
+    .testimonial-fancy-quote {
+      font-size: 1.13rem;
+      color: #2563eb;
+      font-weight: 600;
+      margin-bottom: 0.7rem;
+      line-height: 1.5;
+      position: relative;
+      padding-left: 1.2rem;
+    }
+    .testimonial-fancy-quote:before {
+      content: '\201C';
+      font-size: 2.2rem;
+      color: #f472b6;
+      position: absolute;
+      left: 0;
+      top: -0.7rem;
+      opacity: 0.18;
+    }
+    .testimonial-fancy-author {
+      font-size: 1.01rem;
+      color: #888;
+      font-weight: 500;
+      margin-top: 0.2rem;
+      margin-left: 0.7rem;
+    }
+    .testimonial-fancy:hover {
+      box-shadow: 0 8px 28px rgba(244,114,182,0.13);
+      transform: translateY(-6px) scale(1.03);
+      z-index: 2;
+    }
+    @media (max-width: 700px) {
+      .testimonials-section-fancy {
+        padding: 1.1rem 0.3rem 0.7rem 0.3rem;
+      }
+      .testimonials-title-fancy {
+        font-size: 1.2rem;
+      }
+      .testimonials-fancy {
+        gap: 0.7rem;
+      }
+      .testimonial-fancy {
+        padding: 1rem 0.7rem 0.7rem 0.7rem;
+        min-width: 140px;
+        font-size: 0.97rem;
+      }
+      .testimonial-fancy-quote {
+        font-size: 0.97rem;
+        padding-left: 0.7rem;
+      }
+      .testimonial-fancy-quote:before {
+        font-size: 1.3rem;
+        top: -0.3rem;
+      }
+      .testimonial-fancy-author {
+        font-size: 0.93rem;
+        margin-left: 0.3rem;
+      }
+    }
+    </style>
+
+    <script>
+      // Slider removed: No JS needed for feature grid
+    </script>
+    <script src="script.js"></script>
+
+<script>
+// Add to Cart notification and shopping bag update for homepage demo cards
+function showNotification(message) {
+  let notif = document.createElement('div');
+  notif.innerHTML = `<span style='display:block;margin-bottom:0.5rem;'>${message}</span><a href='bag.html' style='display:inline-block;padding:0.4rem 1.2rem;background:#fff;color:#111;border-radius:1.2rem;font-weight:600;font-size:1rem;text-decoration:none;box-shadow:0 2px 8px #0002;margin-top:0.3rem;'>View Bag</a>`;
+  notif.style.position = 'fixed';
+  notif.style.top = '32px';
+  notif.style.right = '32px';
+  notif.style.background = 'rgba(20,20,20,0.98)';
+  notif.style.color = '#fff';
+  notif.style.padding = '1.3rem 2.5rem 1.1rem 2.5rem';
+  notif.style.borderRadius = '2.2rem';
+  notif.style.fontWeight = 'bold';
+  notif.style.fontSize = '1.13rem';
+  notif.style.boxShadow = '0 8px 32px #0008, 0 2px 8px #2563eb33';
+  notif.style.zIndex = 9999;
+  notif.style.opacity = 1;
+  notif.style.display = 'flex';
+  notif.style.flexDirection = 'column';
+  notif.style.alignItems = 'center';
+  notif.style.gap = '0.2rem';
+  notif.style.transition = 'opacity 0.3s';
+  document.body.appendChild(notif);
+  setTimeout(() => { notif.style.opacity = 0; }, 1700);
+  setTimeout(() => { notif.remove(); }, 2000);
+}
+function updateBagCount() {
+  // Remove any count span from the shopping bag icon (homepage should never show a number)
+  document.querySelectorAll('.icon-link[title="Shopping Bag"]').forEach(link => {
+    let span = link.querySelector('span');
+    if (span) span.remove();
+  });
+  // Also clear any #shop-bag-count spans if present
+  document.querySelectorAll('#shop-bag-count').forEach(span => { span.textContent = ''; });
+}
+document.addEventListener('DOMContentLoaded', function() {
+  // For demo: add to cart for homepage hero cards (if any)
+  document.querySelectorAll('.add-to-cart-btn').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      const title = btn.getAttribute('data-title') || 'Product';
+      const price = btn.getAttribute('data-price') || '';
+      const img = btn.getAttribute('data-img') || '';
+      let cart = JSON.parse(localStorage.getItem('cart') || '[]');
+      const existing = cart.find(item => item.title === title);
+      if (existing) {
+        existing.qty += 1;
+      } else {
+        cart.push({ title, price, img, qty: 1 });
+      }
+      localStorage.setItem('cart', JSON.stringify(cart));
+      showNotification('Added to bag!');
+      updateBagCount();
+    });
+  });
+  updateBagCount();
+});
+</script>
+</section>
+
+    <div style="text-align:center;color:#888;font-size:0.95rem;margin:40px 0 18px 0;">
+        &copy; 2025 ZARA. This is a demo front page inspired by Zara.com. All rights reserved.
+    </div>
+</body>
+</html>

@@ -1,0 +1,66 @@
+/* Checkout Page Styles */
+.checkout-main {
+  max-width: 900px;
+  margin: 2.5rem auto 2rem auto;
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 6px 32px rgba(80,80,180,0.10);
+  padding: 2.5rem 2vw 2.5rem 2vw;
+}
+.checkout-form {
+  max-width: 420px;
+  margin: 0 auto;
+  background: #f8fafc;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(80,80,180,0.07);
+  padding: 2rem 1.5rem 1.5rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+.checkout-form label {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #222;
+  margin-bottom: 0.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+.checkout-form input, .checkout-form select {
+  padding: 0.7rem 0.8rem;
+  border-radius: 7px;
+  border: 1px solid #d1d5db;
+  font-size: 1rem;
+  margin-top: 0.2rem;
+  background: #fff;
+  transition: border 0.2s;
+}
+.checkout-form input:focus, .checkout-form select:focus {
+  border: 1.5px solid #2563eb;
+  outline: none;
+}
+.checkout-form button[type="submit"] {
+  margin-top: 1.2rem;
+  padding: 0.9rem 0;
+  background: linear-gradient(90deg, #222 60%, #2563eb 100%);
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: 700;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  box-shadow: 0 2px 12px rgba(80,80,180,0.10);
+  transition: background 0.2s;
+}
+.checkout-form button[type="submit"]:hover {
+  background: linear-gradient(90deg, #2563eb 60%, #222 100%);
+}
+@media (max-width: 600px) {
+  .checkout-main {
+    padding: 1.2rem 0.5rem;
+  }
+  .checkout-form {
+    padding: 1.2rem 0.5rem;
+  }
+}

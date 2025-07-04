@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - ZARA</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <button class="accessibility-btn" aria-label="Accessibility Options" tabindex="0" id="accessibility-main-btn">
+      <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" style="display:block;margin:auto;">
+        <circle cx="12" cy="12" r="11" fill="#2563eb" stroke="#fff" stroke-width="2"/>
+        <path d="M12 7a2 2 0 110 4 2 2 0 010-4zm-5 7c0-1.1.9-2 2-2h6a2 2 0 012 2v1a2 2 0 01-2 2h-1v2h-2v-2h-1a2 2 0 01-2-2v-1z" fill="#fff"/>
+      </svg>
+    </button>
+    <div class="accessibility-menu" id="accessibility-menu" style="display:none;">
+      <button class="accessibility-action" title="Increase Text Size" tabindex="0">A+</button>
+      <button class="accessibility-action" title="Decrease Text Size" tabindex="0">A-</button>
+      <button class="accessibility-action" title="High Contrast" tabindex="0">
+        <svg width="20" height="20" viewBox="0 0 20 20"><circle cx="10" cy="10" r="9" fill="#222" stroke="#fff" stroke-width="2"/><path d="M10 2a8 8 0 0 1 0 16V2z" fill="#fff"/></svg>
+      </button>
+      <button class="accessibility-action" title="Grayscale" tabindex="0">
+        <svg width="20" height="20" viewBox="0 0 20 20"><circle cx="10" cy="10" r="9" fill="#bbb" stroke="#fff" stroke-width="2"/></svg>
+      </button>
+      <button class="accessibility-action" title="Reset" tabindex="0">
+        <svg width="20" height="20" viewBox="0 0 20 20"><circle cx="10" cy="10" r="9" fill="#2563eb" stroke="#fff" stroke-width="2"/><path d="M10 5v5l4 2" stroke="#fff" stroke-width="2" fill="none"/></svg>
+      </button>
+    </div>
+    <button class="back-btn" style="margin: 18px 0 0 18px;" onclick="window.location.href='index.html'">&larr; Back</button>
+</body>
+</html>
+
+
+    <div class="page-container">
+        <div class="form-toggle-container">
+            <button class="form-toggle-btn active" id="loginToggle">Login</button>
+            <button class="form-toggle-btn" id="signupToggle">Sign Up</button>
+        </div>
+        <div class="form-anim-wrapper">
+            <form class="login-form form-slide in" id="loginForm">
+                <h2>Login</h2>
+                <input type="email" placeholder="Email" required>
+                <input type="password" placeholder="Password" required>
+                <button type="submit">Login</button>
+                <a href="forgot-password.html" class="forgot-link" id="forgotPasswordLink">Forgot password?</a>
+            </form>
+            <form class="login-form form-slide" id="signupForm">
+                <h2>Sign Up</h2>
+                <input type="text" placeholder="Full Name" required>
+                <input type="email" placeholder="Email" required>
+                <input type="password" placeholder="Password" required>
+                <input type="password" placeholder="Confirm Password" required>
+                <button type="submit">Sign Up</button>
+            </form>
+        </div>
+        <a href="help.html" class="help-link">Need help?</a>
+    </div>
+
+    <!-- Forgot Password Modal -->
+    <div id="forgotModal" class="modal" style="display:none;">
+        <div class="modal-content">
+            <span class="close-modal" id="closeForgot">&times;</span>
+            <h3>Forgot Password</h3>
+            <p>Enter your email to receive reset instructions.</p>
+            <input type="email" placeholder="Email" style="width: 100%; padding: 8px; margin-bottom: 12px;">
+            <button class="modal-btn" id="forgotSubmit">Send</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+    // Animated toggle for login/sign up
+    document.addEventListener('DOMContentLoaded', function() {
+        const loginToggle = document.getElementById('loginToggle');
+        const signupToggle = document.getElementById('signupToggle');
+        const loginForm = document.getElementById('loginForm');
+        const signupForm = document.getElementById('signupForm');
+        const wrapper = document.querySelector('.form-anim-wrapper');
+
+        function showLogin() {
+            loginToggle.classList.add('active');
+            signupToggle.classList.remove('active');
+            loginForm.style.display = 'flex';
+            signupForm.style.display = 'none';
+            loginForm.classList.add('slide-in-left');
+            signupForm.classList.remove('slide-in-right');
+            setTimeout(() => {
+                loginForm.classList.remove('slide-in-left');
+            }, 500);
+        }
+        function showSignup() {
+            signupToggle.classList.add('active');
+            loginToggle.classList.remove('active');
+            signupForm.style.display = 'flex';
+            loginForm.style.display = 'none';
+            signupForm.classList.add('slide-in-right');
+            loginForm.classList.remove('slide-in-left');
+            setTimeout(() => {
+                signupForm.classList.remove('slide-in-right');
+            }, 500);
+        }
+        loginToggle.addEventListener('click', showLogin);
+        signupToggle.addEventListener('click', showSignup);
+        // Default to login
+        showLogin();
+    });
+    </script>
+</body>
+<script src="script.js"></script>
+</html>
